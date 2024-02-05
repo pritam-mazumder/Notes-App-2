@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bac_color">#242424</color>
     <color name="red_color">#F95255</color>
+    <color name="red_700">#D50000</color>
+    <color name="green_700">#64DD17</color>
+    <color name="yellow_700">#FFD600</color>
 </resources>

@@ -21,7 +21,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         binding.btnAddNotes.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_createNoteFragment)
+            Navigation.findNavController(it)
+                .navigate(R.id.action_homeFragment_to_createNoteFragment)
         }
 
         return binding.root
