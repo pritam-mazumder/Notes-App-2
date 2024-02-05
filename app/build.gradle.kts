@@ -63,6 +63,8 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.6.1")
+    val room_version = "2.6.1"
+    kapt("androidx.room:room-compiler:$room_version")
 
 
     // Lifecycle components

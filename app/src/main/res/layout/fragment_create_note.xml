@@ -45,6 +45,7 @@
             <ImageView
                 android:id="@+id/pGreen"
                 android:layout_width="30dp"
+                android:backgroundTint="@color/green_700"
                 android:layout_height="30dp"
                 android:background="@drawable/priority_green" />
 
