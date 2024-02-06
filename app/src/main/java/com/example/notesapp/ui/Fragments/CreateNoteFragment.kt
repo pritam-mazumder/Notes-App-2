@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.example.notesapp.Model.Notes
 import com.example.notesapp.R
 import com.example.notesapp.ViewModel.NotesViewModel
@@ -89,5 +90,7 @@ class CreateNoteFragment : Fragment() {
 
         Toast.makeText(context, "Notes Created Successfully", Toast.LENGTH_SHORT)
             .show()
+
+        Navigation.findNavController(requireView()).navigate(R.id.action_createNoteFragment_to_homeFragment)
     }
 }
