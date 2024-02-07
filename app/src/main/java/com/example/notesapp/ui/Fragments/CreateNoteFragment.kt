@@ -1,13 +1,11 @@
 package com.example.notesapp.ui.Fragments
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -26,38 +24,33 @@ class CreateNoteFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentCreateNoteBinding.inflate(layoutInflater, container, false)
 
-        setColors(ContextCompat.getColorStateList(requireContext(), R.color.green_700), null, null)
+        binding.pGreen.setImageResource(R.drawable.bg_green_700)
 
         binding.pGreen.setOnClickListener {
             priority = "1"
-            setColors(
-                ContextCompat.getColorStateList(requireContext(), R.color.green_700),
-                null,
-                null
-            )
+            binding.pGreen.setImageResource(R.drawable.bg_green_700)
+            binding.pYellow.setImageResource(0)
+            binding.pRed.setImageResource(0)
         }
 
         binding.pYellow.setOnClickListener {
             priority = "2"
-            setColors(
-                null,
-                ContextCompat.getColorStateList(requireContext(), R.color.yellow_700),
-                null
-            )
+            binding.pGreen.setImageResource(0)
+            binding.pYellow.setImageResource(R.drawable.bg_yellow_700)
+            binding.pRed.setImageResource(0)
         }
 
         binding.pRed.setOnClickListener {
             priority = "3"
-            setColors(
-                null,
-                null,
-                ContextCompat.getColorStateList(requireContext(), R.color.red_700)
-            )
+            binding.pGreen.setImageResource(0)
+            binding.pYellow.setImageResource(0)
+            binding.pRed.setImageResource(R.drawable.bg_red_700)
         }
+
 
         binding.btnSaveNotes.setOnClickListener {
             createNotes()
@@ -66,11 +59,11 @@ class CreateNoteFragment : Fragment() {
         return binding.root
     }
 
-    private fun setColors(green: ColorStateList?, yellow: ColorStateList?, red: ColorStateList?) {
-        binding.pGreen.backgroundTintList = green
-        binding.pYellow.backgroundTintList = yellow
-        binding.pRed.backgroundTintList = red
-    }
+//    private fun setColors(green: ColorStateList?, yellow: ColorStateList?, red: ColorStateList?) {
+//        binding.pGreen.backgroundTintList = green
+//        binding.pYellow.backgroundTintList = yellow
+//        binding.pRed.backgroundTintList = red
+//    }
 
     private fun createNotes() {
         val title = binding.editTitle.text.toString()
@@ -91,6 +84,7 @@ class CreateNoteFragment : Fragment() {
         Toast.makeText(context, "Notes Created Successfully", Toast.LENGTH_SHORT)
             .show()
 
-        Navigation.findNavController(requireView()).navigate(R.id.action_createNoteFragment_to_homeFragment)
+        Navigation.findNavController(requireView())
+            .navigate(R.id.action_createNoteFragment_to_homeFragment)
     }
 }

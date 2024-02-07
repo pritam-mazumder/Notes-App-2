@@ -6,7 +6,7 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-parcelize")
 
-    id("androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
