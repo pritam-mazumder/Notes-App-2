@@ -7,14 +7,78 @@
     android:background="@color/bac_color"
     tools:context=".ui.Fragments.HomeFragment">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/allNotes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/bg_sort_option"
+            android:src="@drawable/sort_24px"
+            app:tint="@color/green_700" />
+
+        <TextView
+            android:id="@+id/filterHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:background="@drawable/bg_sort_option"
+            android:fontFamily="@font/regular"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="8dp"
+            android:text="High"
+            android:textColor="@color/red_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/filterMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:background="@drawable/bg_sort_option"
+            android:fontFamily="@font/regular"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="8dp"
+            android:text="Meduim"
+            android:textColor="@color/yellow_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/filterLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/bg_sort_option"
+            android:fontFamily="@font/regular"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="8dp"
+            android:text="Low"
+            android:textColor="@color/green_700"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvAllNotes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

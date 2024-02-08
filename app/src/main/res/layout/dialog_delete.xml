@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#707070"
-    android:orientation="vertical"
-    android:paddingVertical="20dp">
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="10dp"
+        app:cardBackgroundColor="#E7E7E7"
+        app:cardCornerRadius="8dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -18,12 +26,13 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#e8e8e8"
         android:fontFamily="@font/bold"
+        android:id="@+id/dialog_no"
         android:gravity="center"
         android:padding="5dp"
         android:text="No"
@@ -31,11 +40,14 @@
         android:textColor="@color/black" />
 
     <Button
+        android:id="@+id/dialog_yes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/red_color"
         android:fontFamily="@font/bold"
         android:gravity="center"
         android:padding="5dp"
